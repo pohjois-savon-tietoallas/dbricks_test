@@ -1,0 +1,5 @@
+install.packages("dtplyr")
+install.packages("lobstr")
+install.packages("wordcloud")
+install.packages("wordcloud2")
+install.packages("gutenbergr")
