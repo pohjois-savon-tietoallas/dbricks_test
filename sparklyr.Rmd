@@ -33,10 +33,20 @@ library(SparkR)
     ```{r, eval = eval_sparklyr}
     sc <- spark_connect(method = "databricks")
     ```
+    
+What does this error message mean?
+
+    ```
+    cannot create file '/usr/local/lib/R/site-library/sparklyr/java//sparklyr-2.4-2.11.jar', reason 'Permission denied'cannot create file '/usr/local/lib/R/site-library/sparklyr/java//sparklyr-2.2-2.11.jar', reason 'Permission denied'cannot create file '/usr/local/lib/R/site-library/sparklyr/java//sparklyr-2.1-2.11.jar', reason 'Permission denied'
+    ```
 
 4. Click on the `Spark` button to view the current Spark session's UI **NOT WORKING**
 
+**Also no tables shown in Connections-tab**
+  
+
 5. Click on the `Log` button to see the message history **NOT WORKING**
+
 
 ## Data transfer
 *Practice uploading data to Spark*
