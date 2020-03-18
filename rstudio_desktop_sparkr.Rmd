@@ -1,0 +1,75 @@
+---
+title: "Databricks Connect test with SparkR"
+output:
+    html_document:
+      toc: true
+      toc_float: true
+      number_sections: true
+---
+
+```{r}
+knitr::opts_chunk$set(echo = TRUE, eval = FALSE)
+```
+
+
+Testing databricks connect on desktop RStudio. Setup first [databricks connect]().
+
+## Connect to databricks
+
+Create connect to demodata databricks
+
+```{r}
+library(dplyr)
+library(SparkR, lib.loc = .libPaths(c(file.path("~/AppData/spark-2.4.5-bin-hadoop2.7/", 'R', 'lib'), .libPaths())))
+Sys.setenv(SPARK_HOME = "/usr/local/lib/python3.7/site-packages/pyspark/")
+Sys.setenv(JAVA_HOME = "/Library/Java/JavaVirtualMachines/jdk1.8.0_241.jdk/Contents/Home")
+SparkR::sparkR.session()
+```
+
+## Test 
+
+Test connection with `faithful` dataset
+
+```{r}
+df <- as.DataFrame(faithful)
+df1 <- dapply(df, function(x) { x }, schema(df))
+collect(df1)
+```
+
+## Datasets 
+
+Test datasets in project area
+
+```{r}
+# Function for viewing data
+View <- function(data,n=1001,...) {
+display(collect(head(data,n,...)))  
+}
+
+## Datasets
+persons <- read.parquet('/mnt/demodata/persons.parquet')
+care_reg <- read.parquet('/mnt/demodata/care_reg.parquet')
+# drugs <- read.parquet('/mnt/demodata/drugs.parquet')
+# mort <- read.parquet('/mnt/demodata/mort.parquet')
+# srr <- read.parquet('/mnt/demodata/srr.parquet')
+# inst_reg <- read.parquet('/mnt/demodata/inst_reg.parquet')# 
+
+## EDA
+str(care_reg)
+summary(care_reg)
+```
+
+
+## Stop
+
+You can stop the Spark session but the cluster will not shut down until the preset  autotermination time, or until you terminate it manually.
+
+```{r}
+SparkR::sparkR.session.stop()
+```
+
+
+
+## Notes
+
+
