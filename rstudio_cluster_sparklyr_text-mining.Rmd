@@ -19,7 +19,7 @@ readLines("/usr/share/class/books/arthur_doyle.txt", 30)
 
 
 
-## Data Import
+## Data Importg
 *Read the book data into Spark*
 
 1. Load the `sparklyr` library
