@@ -2,6 +2,15 @@
 
 This project includes RStudio + Databricks examples. You can run either RStudio in databricks cluster or use desktop RStudio and databricks connect. Third option is to have a RStudio server which has connection to databricks, but this is not tested out yet. 
 
+## Guides
+
+- `rstudio_cluster_sparklyr.Rmd` how to use sparklyr command in databricks environment
+
+- `rstudio_cluster_sparklyr_text-mining.Rmd` how to do text mining in databricks environment
+
+- `rstudio_desktop_sparkr.Rmd` how to use sparkr package in rstudio desktop + databricks connect
+
+
 ## How to clone project in databricks RStudio cluster
 
 1. Start RStudio Cluster in databricks
