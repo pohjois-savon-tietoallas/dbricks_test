@@ -1,5 +1,5 @@
 ## Install packages ----
-list.of.packages <- c("wordcloud", "wordcloud2", "gutenbergr", "rmarkdown")
+list.of.packages <- c("wordcloud", "wordcloud2", "gutenbergr", "rmarkdown", "dtplyr", "lobstr")
 new.packages <- list.of.packages[!(list.of.packages %in% installed.packages()[,"Package"])]
 if(length(new.packages)) install.packages(new.packages)
 

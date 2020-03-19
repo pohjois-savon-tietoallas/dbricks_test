@@ -7,8 +7,8 @@ library(bigdataclass)
 library(DBI)
 
 ## Material folder
-folder <- "~/class"
-if(!dir.exists(folder)) dir.create(folder)
+# folder <- "~/class"
+# if(!dir.exists(folder)) dir.create(folder)
 
 # ## Open database connection
 # con <- dbConnect(RPostgres::Postgres(),
@@ -33,6 +33,6 @@ if(!dir.exists(folder)) dir.create(folder)
 # bdc_data_files(con = con, folder = files_folder)
 
 ## Downloads the books from the Gutenbergh API and saves them to the "folder"
-books_folder <- file.path(folder, "books")
-if(!dir.exists(books_folder)) dir.create(books_folder)
-bdc_data_books(file.path(folder, "books"))
+# books_folder <- file.path(folder, "books")
+# if(!dir.exists(books_folder)) dir.create(books_folder)
+# bdc_data_books(file.path(folder, "books"))
